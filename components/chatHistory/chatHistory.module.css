@@ -1,0 +1,33 @@
+.userMessage,
+.modelMessage {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #444;
+  color: #eee;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.userMessage > span,
+.modelMessage > span {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+
+.userMessage {
+  align-self: flex-end;
+}
+
+.modelMessage {
+  align-self: flex-start;
+}
+
+.chatHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  overflow-y: scroll;
+}

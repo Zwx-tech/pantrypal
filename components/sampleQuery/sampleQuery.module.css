@@ -1,0 +1,29 @@
+.wrapper {
+  padding: 1rem;
+  background-color: #444;
+  color: #eee;
+  width: fit-content;
+  border-radius: 1rem;
+  flex: 1;
+  text-align: left;
+  border: none;
+}
+
+.logo {
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+  background-color: #eee;
+  border-radius: 0.75rem;
+}
+
+.wrapper > h5 {
+  margin-top: 0.75rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.wrapper > p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 0.5rem;
+  line-height: 1.4rem;
+}
+
+.wrapper ul {
+  margin-left: 2rem;
+}
+
+.wrapper ol {
+  margin-left: 1rem;
+}
