@@ -10,7 +10,7 @@ import { NextResponse } from "next/server";
 
 const MODEL_NAME = "gemini-1.5-flash";
 const GEMINI_API_KEY: string =
-  process.env.API_KEY ||
+  process.env.GEMINI_API_KEY ||
   (() => {
     throw new Error("API_KEY is not defined");
   })();

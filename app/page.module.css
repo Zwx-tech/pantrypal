@@ -160,3 +160,17 @@
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
+.engineBtn {
+  color: #444;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.engineBtn:hover {
+  background-color: #ddd;
+  color: #444;
+}

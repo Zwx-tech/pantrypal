@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 
 export function useChatbot() {
   const [history, setHistory] = useState<ChatbotMessage[]>([]);
+  const [currentEngine, setCurrentEngine] = useState("ibm");
   const addUserMessage = (message: string) => {
     console.log(`User: ${message}`);
     setHistory((prev) => [...prev, { role: "user", message }]);
@@ -17,7 +18,7 @@ export function useChatbot() {
     const historyWithoutLastMessage = history.slice(0, history.length - 1);
     console.log(userMessage.message);
     if (userMessage.role === "user") {
-      fetch("/api/chat/ibm", {
+      fetch(`/api/chat/${currentEngine}`, {
         method: "POST",
         body: JSON.stringify({
           message: userMessage.message,
@@ -34,5 +35,11 @@ export function useChatbot() {
     }
   }, [history]);
 
-  return { history, addUserMessage, isHistoryEmpty };
+  return {
+    history,
+    addUserMessage,
+    isHistoryEmpty,
+    currentEngine,
+    setCurrentEngine,
+  };
 }

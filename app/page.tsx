@@ -7,11 +7,20 @@ import ChatHistory from "@/components/chatHistory/chatHistory";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const { history, addUserMessage, isHistoryEmpty } = useChatbot();
-
+  const {
+    history,
+    addUserMessage,
+    isHistoryEmpty,
+    currentEngine,
+    setCurrentEngine,
+  } = useChatbot();
   function handleQuerySubmit() {
     addUserMessage(query);
     setQuery("");
+  }
+
+  function changeEngine() {
+    setCurrentEngine((prev) => (prev === "ibm" ? "gemini" : "ibm"));
   }
 
   return (
@@ -19,6 +28,9 @@ export default function Home() {
       <nav className={styles.nav}>
         <span className={styles.logo}></span>
         <h6>PantryPal</h6>
+        <button className={styles.engineBtn} onClick={changeEngine}>
+          Selected engine: {currentEngine}
+        </button>
       </nav>
       <main className={styles.main}>
         <div className={styles.chatbotInfoWrapper}>
