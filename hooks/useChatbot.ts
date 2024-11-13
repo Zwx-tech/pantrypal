@@ -15,9 +15,9 @@ export function useChatbot() {
     }
     const userMessage = history[history.length - 1];
     const historyWithoutLastMessage = history.slice(0, history.length - 1);
-    console.log(userMessage);
+    console.log(userMessage.message);
     if (userMessage.role === "user") {
-      fetch("/api/chat", {
+      fetch("/api/chat/ibm", {
         method: "POST",
         body: JSON.stringify({
           message: userMessage.message,

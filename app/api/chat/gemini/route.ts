@@ -9,7 +9,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
 const MODEL_NAME = "gemini-1.5-flash";
-const API_KEY: string =
+const GEMINI_API_KEY: string =
   process.env.API_KEY ||
   (() => {
     throw new Error("API_KEY is not defined");
@@ -19,7 +19,7 @@ async function runChat(
   userInput: string,
   history: ServerChatbotHistoryMessage[]
 ) {
-  const genAI = new GoogleGenerativeAI(API_KEY);
+  const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({
     model: MODEL_NAME,
     systemInstruction:
