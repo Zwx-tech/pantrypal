@@ -1,7 +1,7 @@
 .wrapper {
   padding: 1rem;
-  background-color: #444;
-  color: #eee;
+  background-color: var(--accent);
+  color: var(--text-light);
   width: fit-content;
   border-radius: 1rem;
   flex: 1;
@@ -12,7 +12,7 @@
 .logo {
   width: 3rem;
   aspect-ratio: 1 / 1;
-  background-color: #eee;
+  background-color: var(--primary);
   border-radius: 0.75rem;
 }
 

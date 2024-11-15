@@ -6,6 +6,15 @@
   margin: 0;
 }
 
+:root {
+  --secondary: blue;
+  --primary: red;
+  --accent: pink;
+  --text-light: red;
+  --text-dark: green;
+  --text-medium: yellow;
+}
+
 body {
   font-family: Helvetica, sans-serif;
   min-height: 100vh;

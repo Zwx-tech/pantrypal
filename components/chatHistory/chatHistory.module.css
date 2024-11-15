@@ -2,8 +2,8 @@
 .modelMessage {
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #444;
-  color: #eee;
+  background-color: var(--accent);
+  color: var(--text-dark);
   max-width: 100%;
   word-wrap: break-word;
 }

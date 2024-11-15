@@ -13,17 +13,18 @@ const SERVICE_URL = process.env.WATSONX_SERVICE_URL;
 const PROJECT_ID = process.env.WATSONX_PROJECT_ID;
 
 async function getWatsonAssistantResponse(message: string) {
+  //* Initialize the WatsonXAI service
+  //* It's used to interact with the WatsonX AI service & handles authentication
   const watsonxAIService = WatsonXAI.newInstance({
     version: "2024-05-31",
     serviceUrl: SERVICE_URL,
   });
 
-  console.log(SERVICE_URL);
-
   const textGenRequestParametersModel = {
     max_new_tokens: 100,
   };
 
+  //* Parameters for the WatsonX AI service
   const params = {
     input:
       "\nFull Context: You are an AI Chef and Dietitian in one. I will provide you with a list of ingredients, and you will suggest what I can cook using them.\n\nSteps:\n1.Identify key ingredients.\n2.Provide the user with a list of 3 recipes, including their estimated nutritional parameters.\n\nOutput Format: When responding, provide only the name of the dish, a brief description, and estimated(num values) nutritional parameters. Do not provide the full recipe unless explicitly requested.\n\nSpesific intrustions\nIf u dont know sth, dont make things up; no yapping. \nU are a cat chef. \nYell at vegetarains, but be polite with it and ask the user if he would like some other options(with meat)\nU are prohibited from giving vegetarian options.\nCharacter:\nU should be kind and nice since u are a CAT chef. Please use markdown for formatting.",
@@ -33,8 +34,8 @@ async function getWatsonAssistantResponse(message: string) {
   };
 
   try {
+    //* Generate text using the WatsonX AI service
     const textGeneration = await watsonxAIService.generateText(params);
-    // @ts-ignore
     return textGeneration.result.results[0].generated_text;
   } catch (err) {
     console.warn(err);

@@ -1,6 +1,6 @@
 .page {
   width: 100vw;
-  background-color: #eee;
+  background-color: var(--primary);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 .nav > h6 {
   font-size: 1rem;
   letter-spacing: 0.05rem;
-  color: #444;
+  color: var(--text-dark);
 }
 
 .main {
@@ -39,13 +39,13 @@
 
 .chatbotInfoHeader h1 {
   font-size: 3rem;
-  color: #999;
+  color: var(--text-medium);
   margin-top: 0.5rem;
 }
 
 .chatbotInfoHeader h3 {
   font-size: 2rem;
-  color: #444;
+  color: var(--text-dark);
   font-weight: 600;
   margin-top: 0.5rem;
 }
@@ -70,7 +70,7 @@
 .chatbotLogo {
   width: 2.5rem;
   aspect-ratio: 1 / 1;
-  background-color: #444;
+  background-color: var(--secondary);
   border-radius: 0.75rem;
 }
 
@@ -95,7 +95,7 @@
 
 .inputWrapper {
   display: flex;
-  background-color: #444;
+  background-color: var(--secondary);
   width: 100%;
   height: 3rem;
   border-radius: 1.5rem;
@@ -106,16 +106,16 @@
 .inputWrapper button {
   background-color: transparent;
   border: none;
-  color: #aaa;
+  color: var(--text-medium);
   margin-right: 1.5rem;
 }
 
 .inputWrapper button:hover {
-  color: #eee;
+  color: var(--text-medium);
 }
 
 .inputWrapper input::placeholder {
-  color: #aaa;
+  color: var(--text-medium);
 }
 
 .inputWrapper input {
@@ -125,7 +125,7 @@
   background-color: transparent;
   border: none;
   font-size: 0.9rem;
-  color: #eee;
+  color: var(--text-medium);
   outline: none;
 }
 
@@ -133,7 +133,7 @@
 .modelMessage {
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #444;
+  background-color: var(--secondary);
   color: #eee;
   max-width: 100%;
   word-wrap: break-word;
@@ -162,7 +162,8 @@
 }
 
 .engineBtn {
-  color: #444;
+  color: var(--text-dark);
+  background-color: var(--primary);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -171,6 +172,7 @@
 }
 
 .engineBtn:hover {
-  background-color: #ddd;
-  color: #444;
+  background-color: var(--primary);
+  filter: brightness(90%);
+  color: var(--text-dark);
 }
